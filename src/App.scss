@@ -1,0 +1,158 @@
+$color_1: #ccc;
+$color_2: #999;
+$color_3: #bbb;
+$color_4: #777;
+$font-family_1: 'Josefin Slab', serif;
+$font-family_2: 'Josefin Sans', serif;
+$font-family_3: 'Montserrat', sans-serif;
+$background-color_1: #292f38;
+$background-color_2: #aaa;
+$background-color_3: #1d222b;
+$background-color_4: #790e43;
+$background-color_5: transparent;
+
+@import "https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap";
+
+html {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	background: linear-gradient(100deg, rgb(182, 40, 111) 50%, #ac2066 0);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.app-wrapper {
+	background-color: $background-color_1;
+	width: 25%;
+	min-width: 450px;
+	height: 600px;
+	padding: 30px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+h1 {
+	color: $color_1;
+	font-weight: 300;
+	text-align: center;
+	margin: 50px 20px 60px 20px;
+	font-family: $font-family_1;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+	margin-bottom: 50px;
+	width: 100%;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.list {
+	width: 90%;
+	margin: auto;
+	max-height: 300px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+// &::-webkit-scrollbar {
+// 	width: 10px;
+// }
+// &::-webkit-scrollbar-track {
+// 	border-radius: 10px;
+// 	background-color: $background-color_2;
+// }
+// &::-webkit-scrollbar-thumb {
+// 	background: #444;
+// 	border-radius: 10px;
+// }
+.task-input {
+	width: 350px;
+	min-width: 250px;
+	padding: 15px 10px 10px 20px;
+	margin-right: 10px;
+	font-family: $font-family_2;
+	font-size: 15px;
+	color: $color_1;
+	background-color: $background-color_3;
+	border: 1px solid #444;
+	outline: none;
+	border-radius: 20px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.buttons {
+	display: flex;
+}
+.btn {
+	margin: 10px;
+}
+.add-task-btn {
+	min-width: 100px;
+	background-color: $background-color_4;
+	color: $color_1;
+	border: none;
+	font-family: $font-family_3;
+	font-size: 14px;
+	border-radius: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	outline: none;
+	cursor: pointer;
+}
+.list-item {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+	padding-bottom: 5px;
+	span {
+		color: $color_2;
+	}
+}
+.task-btn {
+	cursor: pointer;
+	background-color: $background-color_5;
+	border: none;
+	outline: none;
+}
+.btn-delete {
+	i {
+		font-size: 16px;
+		color: $color_3;
+		margin-right: 20px;
+	}
+}
+.btn-edit {
+	i {
+		font-size: 16px;
+		color: $color_3;
+		margin-right: 20px;
+	}
+}
+.clear-btn {
+	width: 100px;
+	height: 35px;
+	background-color: $background-color_4;
+	color: $color_1;
+	border: none;
+	font-family: $font-family_3;
+	font-size: 14px;
+	border-radius: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	outline: none;
+	cursor: pointer;
+}
+.no-tasks {
+	color: $color_4;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 20px;
+}

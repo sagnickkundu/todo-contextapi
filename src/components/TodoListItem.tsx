@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { ITodo } from '../@types/todo';
+import * as React from "react";
+import { ITodo } from "../@types/todo";
 
 type Props = {
   todo: ITodo;
@@ -8,14 +8,20 @@ type Props = {
 
 const Todo: React.FC<Props> = ({ todo, deleteTodo }) => {
   return (
-    <div>
+    <li className="list-item">
+      <span>{todo.title}</span>
       <div>
-        <h1 >{todo.title}</h1>
+        <button
+          className="btn-delete task-btn"
+          onClick={() => deleteTodo(todo.id)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>{" "}
+        <button className="btn-edit task-btn">
+          <i className="fas fa-pen"></i>
+        </button>
       </div>
-      <button onClick={() => deleteTodo(todo.id)}>
-        Delete
-      </button>
-    </div>
+    </li>
   );
 };
 export default Todo;

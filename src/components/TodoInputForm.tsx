@@ -3,7 +3,7 @@ import { TodoContext } from '../context/todoContext';
 import { TodoContextType, ITodo } from '../@types/todo';
 
 const AddTodo: React.FC = () => {
-  const { saveTodo } = React.useContext(TodoContext) as TodoContextType;
+  const { saveTodo, clearList } = React.useContext(TodoContext) as TodoContextType;
   const [formData, setFormData] = React.useState<ITodo | {}>();
   const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     setFormData({
@@ -16,14 +16,16 @@ const AddTodo: React.FC = () => {
     saveTodo(formData);
   };
   return (
-    <form className="Form" onSubmit={(e) => handleSaveTodo(e, formData)}>
-      <div>
-        <div>
-          <label htmlFor="name">Title</label>
-          <input onChange={handleForm} type="text" id="title" />
-        </div>
+    <form className="form" onSubmit={(e) => handleSaveTodo(e, formData)}>
+      <input type="text" placeholder="Add Task..." onChange={handleForm} id="title" required className='task-input'/>
+      <div className='buttons'>
+      <button type="submit" className="btn add-task-btn">
+          {'Add Task'}
+        </button>
+        <button className="btn clear-btn" onClick={clearList}>
+          Clear
+        </button>
       </div>
-      <button disabled={formData === undefined ? true : false}>Add Todo</button>
     </form>
   );
 };
